@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>B3 Gallery</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <ul class='nav navbar-nav'>
+        <li><%= link_to 'Home', '/' %> </li>
+        <li><%= link_to 'Local Artists', artists_path %> </li>
+        <li><%= link_to 'About', '/about' %> </li>
+      </ul>
+    </nav>
+    <%= flash[:alert] %>
+    <%= flash[:notice] %>
+
+    <%= yield %>
+  </div>
+</body>
+</html>
