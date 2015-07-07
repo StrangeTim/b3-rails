@@ -1,0 +1,11 @@
+<%= render "layouts/errors", :object => @repository %>
+
+<%= form_for [@category, @repository] do |f| %>
+  <%= f.label :repo_name %>
+  <%= f.text_field :repo_name %><br>
+  <%= f.label :repo_url %>
+  <%= f.text_field :repo_url %><br>
+  <%= f.label :description %>
+  <%= f.text_field :description %><br>
+  <%= f.submit class: "btn btn-success" %><br>
+<% end %>

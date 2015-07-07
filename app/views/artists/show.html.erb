@@ -1,0 +1,33 @@
+<h3><%= @category.name %> Related Code</h3>
+
+<%= link_to "Edit #{@category.name}", edit_category_path(@category) %><br>
+<%= link_to "Delete #{@category.name}", category_path(@category),
+                                  :data => {:confirm => "Confirm?",
+                                  :method => "delete"} %>
+
+<%if @category.repositories.any? %>
+  <h3>Repositories in this category:</h3>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th width='200px'>Repository Name:</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @category.repositories.each do |repository| %>
+        <tr>
+
+          <td><%= link_to repository.repo_name, category_repository_path(@category,repository)%></td>
+          <td><%= repository.repo_url %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <h3>There are no repositories in this category yet.</h3>
+<% end %>
+
+<br>
+<p><%= link_to "Add Repository", new_category_repository_path(@category) %></p>
