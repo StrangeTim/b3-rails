@@ -1,14 +1,17 @@
-<h1>Index of Code Categories</h1>
-
-<% if @categories.any? %>
-  <ul>
-    <% @categories.each do |category| %>
-      <li><%= link_to category.name, category_path(category) %></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p><h3>No categories currently in index</h3></p>
+<h1>Local Artists</h1>
+<% if user_signed_in? %>
+  <p> <%=  link_to 'Add Artist', new_artist_path, class: "btn btn-primary" %></p>
 <% end %>
 
-
-<%= link_to 'Add a New Category', new_category_path %>
+<% if @artists.any? %>
+  <% @artists.each do |artist| %>
+    <ul>
+      <li class="all-artists">
+        <%= link_to artist.display_image, artist_path(artist) %>
+        <h3><%= link_to artist.name, artist_path(artist) %></h3>
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+  <h3> There has been an error with retrieving artist information. Please try again soon. </h3>
+<% end %>
