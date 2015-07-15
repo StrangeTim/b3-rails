@@ -1,7 +1,10 @@
-<%= render "layouts/errors", :object => @category %>
+<%= render "layouts/errors", :object => @artist %>
 
-<%= form_for @category do |f| %>
-  <%= f.label :name %>
+<%= bootstrap_form_for @artist do |f| %>
   <%= f.text_field :name %>
+  <%= f.text_area :bio %>
+  <%= f.text_field :display_image_name %>
+  <%= f.text_field :display_image_blurb %>
+  <%= f.text_field :display_image_description %>
   <%= f.submit %>
 <% end %>

@@ -17,13 +17,24 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+body {
+  padding-top: 50px;
+  padding-left: 2%;
+  background-image: url('/background.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+}
+
+@media only screen and (max-width: 1224px){
  body {
    padding-top: 50px;
    background-image: url('/background.jpg');
    background-repeat: no-repeat;
-   background-size: 100%;
+   background-size: cover;
    background-attachment: fixed;
  }
+}
 
 .container {
   min-height: 100%;
@@ -36,16 +47,25 @@
   height: 40px;
 }
 
- .navbar-fixed-top {
-   background: rgba(184, 186, 185, 1);
- }
+.navbar{
+  background: rgba(239, 215, 218, 0.74);
+  border: 0px;
 
- .nav.navbar-nav li a{
-   color: blue;
- }
+}
+
+.navbar-default .navbar-brand{
+  color: blue;
+  font-family: san-serif, cursive;
+  font-size: 30px;
+}
+
+.navbar-default .navbar-nav > a {
+  color: #333;
+}
 
  .navbar-fixed-bottom {
    text-align: center;
+   background: #E9CED2;
  }
 
 .navbar-xs {
@@ -59,7 +79,6 @@
 }
 
  ul.nav {
-   width: 100%;
    text-align: center;
  }
 
@@ -125,13 +144,14 @@
 
    position: relative;
    background: none;
-   width: 100%;
+   width: 90%;
    /*height: 300px;*/
    background-size: cover;
    background-color: #000;
    overflow: hidden;
    color: black;
    padding: 5px;
+   margin-left: 5%;
  }
 
  .carousel-inner > .item > img {
