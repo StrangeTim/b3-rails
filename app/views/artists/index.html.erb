@@ -7,7 +7,7 @@
   <% @artists.each do |artist| %>
     <ul>
       <li class="all-artists">
-        <%= link_to artist.display_image, artist_path(artist) %>
+        <%= link_to image_tag(artist.display_image), artist_path(artist) %>
         <h3><%= link_to artist.name, artist_path(artist) %></h3>
       </li>
     </ul>

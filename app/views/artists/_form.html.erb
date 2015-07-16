@@ -3,8 +3,6 @@
 <%= bootstrap_form_for @artist do |f| %>
   <%= f.text_field :name %>
   <%= f.text_area :bio %>
-  <%= f.text_field :display_image_name %>
-  <%= f.text_field :display_image_blurb %>
-  <%= f.text_field :display_image_description %>
+  <%= f.file_field :profile_pic %>
   <%= f.submit %>
 <% end %>

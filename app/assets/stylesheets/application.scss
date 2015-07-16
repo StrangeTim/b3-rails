@@ -17,9 +17,12 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+// <--------------- DO NOT TOUCH ANYTHING ABOVE THIS LINE ---------------- >
+
 body {
   padding-top: 50px;
   padding-left: 2%;
+  padding-right: 2%;
   background-image: url('/background.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
@@ -39,7 +42,6 @@ body {
 .container {
   min-height: 100%;
   height: auto !important;
- //  height: 100%;
   margin: 0 auto 40px;
 }
 
@@ -48,24 +50,19 @@ body {
 }
 
 .navbar{
-  background: rgba(239, 215, 218, 0.74);
-  border: 0px;
-
+  background: rgba(239, 215, 218, 0.74); // THIS 'RGBA' IS THE PINK SLIGHTLY SEE THROUGH
+  border: 0px;                           // NAVIGATION BAR BACKGROUND
 }
 
 .navbar-default .navbar-brand{
-  color: blue;
+  color: black;                   // THIS COLOR 'BLACK' IS THE NAVIGATION BAR TEXT
   font-family: san-serif, cursive;
   font-size: 30px;
 }
 
-.navbar-default .navbar-nav > a {
-  color: #333;
-}
-
  .navbar-fixed-bottom {
    text-align: center;
-   background: #E9CED2;
+   background: #E9CED2;     // THIS COLOR '#E9CED2' IS THE BOTTOM FOOTER BAR COLOR
  }
 
 .navbar-xs {
@@ -106,15 +103,6 @@ body {
 
  }
 
-
- // .nav li {
- //   float: none;
- //   width: 33%;
- //   display: inline-block;
- // }
-
-
-
  .all-artists img {
    max-width: 90%;
    border-radius: 4px;
@@ -125,7 +113,7 @@ body {
 
 
  .all-artists {
-   background-color: #ddd;
+   background-color: #ddd;  // THIS COLOR IS THE GREY BOX AROUND ARTWORK IMAGES
    box-shadow: 4px 3px 5px #888888;
    border: 0px solid #523628;
    border-radius: 6px;
@@ -137,6 +125,10 @@ body {
    height: auto;
    position: relative;
    text-align: center;
+ }
+
+ .all-artists.sold {
+
  }
 
 
@@ -165,4 +157,17 @@ body {
 
 .field {
   width: 200px;
+}
+
+.form-group{
+  width: 400px;
+}
+
+.clear {
+  display: block
+  width 100%;
+}
+
+.add_artwork_form {
+  display: none;
 }

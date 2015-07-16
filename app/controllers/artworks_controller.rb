@@ -1,4 +1,4 @@
-class artworksController < ApplicationController
+class ArtworksController < ApplicationController
 
   def new
     @artist = Artist.find(params[:artist_id])
@@ -9,10 +9,14 @@ class artworksController < ApplicationController
     @artist = Artist.find(params[:artist_id])
     @artwork = @artist.artworks.new(artwork_params)
     if @artwork.save
-      redirect_to artist_path(@artwork.artist)
+      if params[:display_image] === "1"
+        @artist.update(:display_image_id => @artwork.id)
+        @artist.save
+      end
     else
       render :new
     end
+    redirect_to artist_path(@artwork.artist)
   end
 
   def show
@@ -37,7 +41,7 @@ class artworksController < ApplicationController
 
   private
   def artwork_params
-    params.require(:artwork).permit(:artwork_name, :artwork_image_url, :description)
+    params.require(:artwork).permit(:name, :blurb, :image_description, :image)
   end
 
 end

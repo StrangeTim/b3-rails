@@ -15,3 +15,16 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+$(function() {
+  $('.flash-wrapper').delay(1500).fadeOut(2000);
+
+  $('.add_artwork').click(function() {
+    $('.add_artwork_form').toggle();
+    if ( $('.add_artwork').text() == "Hide Form") {
+      $('.add_artwork').text("Add Artwork");
+    } else {
+      $('.add_artwork').text("Hide Form");
+    }
+  });
+});
