@@ -27,4 +27,6 @@ $(function() {
       $('.add_artwork').text("Hide Form");
     }
   });
+
+  $('#myCarousel').carousel({interval: 2500, cycle: true});
 });
