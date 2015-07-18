@@ -1,4 +1,8 @@
-<h1>B3 Gallery</h1>
+<h1> <%= @title %> </h1>
+
+<% if user_signed_in? %>
+  <%= link_to "Edit Home Page", edit_home_path(@home), class: "btn btn-sm btn-warning" %>
+<% end %>
 
 <div class="jumbotron">
   <div id="myCarousel" class="carousel slide">
@@ -33,39 +37,14 @@
 </div>
 
 <div class="col-md-6 divided-column">
-  <h3>Featured New Works</h3>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim,
-     felis non varius convallis, nunc metus rhoncus nisl, sed lobortis mauris
-     risus et orci. Praesent molestie nisi id est facilisis ultricies. Nullam
-     efficitur, turpis ut sodales fermentum, tellus justo tempor lectus, eget
-     convallis diam urna non massa. Aenean nec turpis finibus, vulputate velit
-     quis, elementum nunc. Aliquam ac rutrum diam.
-   </p><p>
-     Sed tempor iaculis tellus vitae commodo. Vestibulum ultrices quam urna, ac facilisis quam tristique
-     id. Duis purus nisl, placerat eget convallis vitae, euismod quis nisl.
-     Integer laoreet sollicitudin mi, sed viverra est. In hac habitasse platea
-     dictumst. Vestibulum bibendum ipsum neque, in elementum nisl lacinia eget.
-     Suspendisse quis felis sed augue egestas consequat non a nunc.
-  </p><p>
-    Nunc blandit purus sit amet scelerisque rutrum. Fusce sodales facilisis
-    nisi quis pulvinar. Morbi neque lectus, venenatis quis pellentesque sed,
-    viverra ut nulla. Morbi sagittis eget odio in blandit. In hac habitasse
-    platea dictumst. Duis ornare, felis in suscipit finibus, lorem nunc
-    iaculis mi, et aliquam magna ex ac tortor. Nunc dapibus, ante vitae
-    lobortis rutrum, est nibh sollicitudin sem, in bibendum massa arcu non elit.
-  </p><p>
-    Ut vitae ornare odio, sed accumsan augue. Pellentesque congue eget nisi quis
-    faucibus. Nullam gravida elit ac odio posuere ultrices. Integer vel
-    fringilla dui, in porta nisl. Nunc odio eros, sagittis vel mollis at,
-    commodo et lectus. Fusce suscipit, est volutpat lobortis aliquam, sapien
-    ante venenatis sapien, sed posuere leo dolor et urna.
-  </p>
+  <h3> <%= @left_header %> </h3>
+  <br>
+  <p><pre><%= @left_body %> </pre></p>
 
 </div>
 
 <div class="col-md-6">
-  <h3>NEWS!</h3>
-  <br><br>
-  <h1>BLARGH</h1>
+  <h3> <%= @right_header %> </h3>
+  <br>
+  <p><pre><%= @right_body %> </pre></p>
 </div>

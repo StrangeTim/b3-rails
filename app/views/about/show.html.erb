@@ -1,12 +1,27 @@
-<h1>About Us</h1>
+<h1> <%= @title %> </h1>
 
-<img class="img-responsive center-block" src="img/b3owners.jpg" alt="The owners of B3 Gallery">
-<br>
-<div class="clearfix"></div>
+<% if user_signed_in? %>
+  <%= link_to "Edit About Page", edit_about_path(@about), class: "btn btn-sm btn-warning" %>
+<% end %>
+
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-4">
+    <%= image_tag(@image, alt: "The Owners of B3 Gallery") %>
+  </div>
+  <div class="col-sm-1"></div>
+  <div class="col-sm-4">
+    <h3> Contact Us: </h3><br>
+    <h4>
+    By Phone: &nbsp&nbsp&nbsp&nbsp&nbsp <%= @contact_phone %><br>
+    By Email: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= @contact_email %><br>
+    Or visit us at: &nbsp&nbsp<%= @contact_address %></h4>
+  </div>
+</div>
+<br><br><br>
+  <div class="clearfix"></div>
+<br><br>
+<div class="col-sm-1"></div>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dignissim, felis non varius convallis, nunc metus rhoncus nisl, sed lobortis mauris risus et orci. Praesent molestie nisi id est facilisis ultricies. Nullam efficitur, turpis ut sodales fermentum, tellus justo tempor lectus, eget convallis diam urna non massa. Aenean nec turpis finibus, vulputate velit quis, elementum nunc. Aliquam ac rutrum diam. Sed tempor iaculis tellus vitae commodo. Vestibulum ultrices quam urna, ac facilisis quam tristique id. Duis purus nisl, placerat eget convallis vitae, euismod quis nisl. Integer laoreet sollicitudin mi, sed viverra est. In hac habitasse platea dictumst. Vestibulum bibendum ipsum neque, in elementum nisl lacinia eget. Suspendisse quis felis sed augue egestas consequat non a nunc.
-</p><p>
-Vestibulum vel purus consectetur, dignissim purus ut, gravida orci. Praesent non mollis mauris, in consectetur nunc. Donec vitae ligula vitae leo cursus lacinia vel quis enim. Vestibulum eu scelerisque mauris. Donec lacinia varius suscipit. Fusce placerat dui at dignissim fermentum. Phasellus luctus mollis ultrices. Donec et hendrerit enim. Etiam sit amet odio luctus, feugiat augue sit amet, ultrices neque. Suspendisse pellentesque felis et sem elementum aliquet. Mauris euismod ligula ullamcorper ligula sollicitudin, a vestibulum nunc scelerisque. Fusce vestibulum nec felis sit amet dictum. Mauris at gravida nisl, vel vulputate eros.
-</p><p>
-Nunc blandit purus sit amet scelerisque rutrum. Fusce sodales facilisis nisi quis pulvinar. Morbi neque lectus, venenatis quis pellentesque sed, viverra ut nulla. Morbi sagittis eget odio in blandit. In hac habitasse platea dictumst. Duis ornare, felis in suscipit finibus, lorem nunc iaculis mi, et aliquam magna ex ac tortor. Nunc dapibus, ante vitae lobortis rutrum, est nibh sollicitudin sem, in bibendum massa arcu non elit. Ut vitae ornare odio, sed accumsan augue. Pellentesque congue eget nisi quis faucibus. Nullam gravida elit ac odio posuere ultrices. Integer vel fringilla dui, in porta nisl. Nunc odio eros, sagittis vel mollis at, commodo et lectus. Fusce suscipit, est volutpat lobortis aliquam, sapien ante venenatis sapien, sed posuere leo dolor et urna.
+<%= @body %>
 </p>

@@ -1,0 +1,8 @@
+<%= bootstrap_form_for @home do |f| %>
+  <%= f.text_field :title, value: @home.title %>
+  <%= f.text_field :left_header, value: @home.left_header %>
+  <%= f.text_area :left_body, value: @home.left_body %>
+  <%= f.text_field :right_header, value: @home.right_header %>
+  <%= f.text_area :right_body, value: @home.right_body %>
+  <%= f.submit %>
+<% end %>

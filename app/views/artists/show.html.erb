@@ -40,7 +40,17 @@
   <ul>
     <li class="all-artists">
       <%= link_to image_tag(artwork.image), artist_artwork_path(@artist, artwork), alt: artwork.blurb %>
-      <h3><%= link_to artwork.name, artist_artwork_path(@artist, artwork) %></h3>
-    </li>
+      <h3><%= link_to artwork.name, artist_artwork_path(@artist, artwork) %> </h3>
+    </li><br>
+    <% if user_signed_in? %>
+
+      <span>
+      <%= link_to "Edit", edit_artist_artwork_path(@artist, artwork), class: "btn btn-xs btn-warning" %>
+      <%= link_to "Delete", artist_artwork_path(@artist, artwork), class: "btn btn-xs btn-danger",
+                                      :data => {:confirm => "Confirm?",
+                                      :method => "delete"} %>
+    </span><br><br>
+    <% end %>
+
   </ul>
 <% end %>

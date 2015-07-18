@@ -1,0 +1,9 @@
+<%= bootstrap_form_for @about do |f| %>
+  <%= f.text_field :title, value: @about.title %>
+  <%= f.text_field :body, value: @about.body %>
+  <%= f.text_area :contact_phone, value: @about.contact_phone %>
+  <%= f.text_field :contact_email, value: @about.contact_email %>
+  <%= f.text_area :contact_address, value: @about.contact_address %>
+  <%= f.file_field :image %>
+  <%= f.submit %>
+<% end %>

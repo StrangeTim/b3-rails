@@ -33,7 +33,7 @@ class ArtworksController < ApplicationController
     @artwork = Artwork.find(params[:id])
     @artist = Artist.find(params[:artist_id])
     if @artwork.update(artwork_params)
-      redirect_to artist_artwork_path(@artist, @artwork)
+      redirect_to artist_path(@artist)
     else
       render :edit
     end

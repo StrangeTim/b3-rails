@@ -52,6 +52,7 @@ body {
 .navbar{
   background: rgba(239, 215, 218, 0.74); // THIS 'RGBA' IS THE PINK SLIGHTLY SEE THROUGH
   border: 0px;                           // NAVIGATION BAR BACKGROUND
+  min-width: 600px;
 }
 
 .navbar-default .navbar-brand{
@@ -190,4 +191,20 @@ body {
 
 .add_artwork_form {
   display: none;
+}
+
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 15px;
+  font-family: Georgia, Serif;
+  line-height: 1.5;
+  white-space: pre-line;
+  word-break: normal;
+  word-wrap: normal;
+  background: rgba(255, 255, 255, 0.5);
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }

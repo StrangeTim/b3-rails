@@ -3,10 +3,11 @@ Rails.application.routes.draw do
     registrations: 'users/registrations', sessions: 'users/sessions'
   }
   root 'home#show'
-  get '/about', to: 'about#show'
+  get '/login', to: redirect('users/sign_in')
   resources :home, only: [:show, :edit, :update]
   resources :about, only: [:show, :edit, :update]
   resources :artists do
     resources :artworks, except: [:index]
   end
+  get '/about', to: 'about#show'
 end
