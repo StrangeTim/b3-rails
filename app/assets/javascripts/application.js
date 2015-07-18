@@ -28,5 +28,5 @@ $(function() {
     }
   });
 
-  $('#myCarousel').carousel({interval: 2500, cycle: true});
+  $('#myCarousel').carousel({interval: 3000, cycle: true});
 });

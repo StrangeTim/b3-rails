@@ -4,6 +4,8 @@ default: &default
   encoding: unicode
   host: localhost
   pool: 5
+  username: strangetim
+  password: meerkatzebra1
 
 
 development:
