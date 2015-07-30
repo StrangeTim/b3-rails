@@ -30,4 +30,15 @@ $(function() {
   });
 
   $('#myCarousel').carousel({interval: 3000, cycle: true});
+
+  $('#mainModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var image = button.data('image')
+  var description = button.data('description') // Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  modal.find('.modal-image').html("<img src="+image+" />")
+  modal.find('.modal-description').text(description)
+})
 });

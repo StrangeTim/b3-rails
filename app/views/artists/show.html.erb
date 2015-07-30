@@ -39,18 +39,37 @@
 <% @artworks.each do |artwork| %>
   <ul>
     <li class="all-artists">
-      <%= link_to image_tag(artwork.image), artist_artwork_path(@artist, artwork), alt: artwork.blurb %>
-      <h3><%= link_to artwork.name, artist_artwork_path(@artist, artwork) %> </h3>
-    </li><br>
-    <% if user_signed_in? %>
+      <%= link_to image_tag(artwork.image), artist_artwork_path(@artist, artwork), alt: artwork.blurb, data: {toggle: "modal", target: "#mainModal", description: artwork.image_description, image: "/assets/"+artwork.image.url(:original, timestamp: false)}, remote: true %>
+      <h3><%= link_to artwork.name, artist_artwork_path(@artist, artwork), data: {toggle: "modal", target: "#mainModal", description: artwork.image_description, image: "/assets/"+artwork.image.url(:original, timestamp: false)}, remote: true %> </h3>
+      <% if user_signed_in? %>
 
-      <span>
-      <%= link_to "Edit", edit_artist_artwork_path(@artist, artwork), class: "btn btn-xs btn-warning" %>
-      <%= link_to "Delete", artist_artwork_path(@artist, artwork), class: "btn btn-xs btn-danger",
-                                      :data => {:confirm => "Confirm?",
-                                      :method => "delete"} %>
-    </span><br><br>
-    <% end %>
-
+        <span class="imageButtons">
+          <%= link_to "Edit", edit_artist_artwork_path(@artist, artwork), class: "btn btn-xs btn-warning" %>
+          <%= link_to "Delete", artist_artwork_path(@artist, artwork), class: "btn btn-xs btn-danger",
+                                          :data => {:confirm => "Confirm?",
+                                          :method => "delete"} %>
+        </span>
+      <% end %>
+    </li>
   </ul>
 <% end %>
+
+<div class="modal fade" id="mainModal" tabindex="-1" role="dialog" aria-labelledby="mainModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="mainModalLabel">Artwork Info:</h4>
+      </div>
+      <div class="modal-body">
+        <div class="modal-image col-sm-3"></div>
+        <div class="col-sm-3"></div>
+        <div class="modal-description col-sm-3"></div>
+      </div>
+      <div class="clearfix"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
