@@ -15,7 +15,6 @@ class AboutController < ApplicationController
   end
 
   def update
-    binding.pry
     @about = About.find(params[:id])
     if @about.update(about_params)
       redirect_to '/about'
