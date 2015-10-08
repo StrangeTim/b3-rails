@@ -4,13 +4,21 @@ before_filter :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
   # def new
+  #
   #   super
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    authorized_users_arr = User.authorized_users
+    binding.pry
+    if !authorized_users_arr.include?(params[:user][:email].downcase)
+      flash[:alert] = "This email is not authorized to create an account"
+      redirect_to "/users/sign_up"
+    else
+      super
+    end
+  end
 
   # GET /resource/edit
   # def edit
@@ -40,12 +48,12 @@ before_filter :configure_account_update_params, only: [:update]
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.for(:sign_up) << [:username, :profile_image, :display_image]
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:login, :username, :email, :password, :password_confirmation) }
   end
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.for(:account_update) <<  [:username, :profile_image, :display_image]
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:login, :username, :email, :password, :password_confirmation, :current_password) }
   end
 
   # The path used after sign up.
