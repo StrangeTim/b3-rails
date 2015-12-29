@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'aws-sdk-rails'
 gem 'rails'
 gem 'pg'
 gem 'sass-rails'
