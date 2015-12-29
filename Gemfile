@@ -7,7 +7,6 @@ gem 'sass-rails'
 gem 'bootstrap-sass'
 gem 'bootstrap_form'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
@@ -16,9 +15,7 @@ gem 'pry'
 gem 'pry-rails'
 gem "letter_opener"
 gem 'devise'
-gem 'pundit'
 gem 'paperclip'
-gem 'poltergeist'
 
 group :development do
   gem 'byebug'
