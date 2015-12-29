@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  @authorized_users = []
+  @authorized_users = ["jessbussert@yahoo.com", "sharonbussert@yahoo.com", "hbussert@gmail.com", "stevenbussert@gmail.com"]
   validates :username, presence: true, uniqueness: { case_sensitive: false}
   validate :validate_username
   # Include default devise modules. Others available are:
